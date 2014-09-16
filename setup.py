@@ -7,7 +7,7 @@ long_description = (open('README.md').read())
 
 setup(name='affinitic.zmq',
       version=version,
-      description="send sms",
+      description="send Messages through IRC",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -17,7 +17,7 @@ setup(name='affinitic.zmq',
           "Programming Language :: Python",
           "Topic :: Software Development :: Code Generators",
       ],
-      keywords='sms affinitic',
+      keywords='zmq affinitic',
       author='Affinitic',
       author_email='info@affinitic.be',
       url='https://github.com/affinitic/affinitic.zmq',
@@ -32,8 +32,8 @@ setup(name='affinitic.zmq',
       extras_require=dict(),
       entry_points="""
       [console_scripts]
-      zmq_server = affinitic.smsutils.zmq_server:main
-      zmq_client = affinitic.smsutils.zmq_client:main
+      zmq_server = affinitic.zmq.zmq_server:main
+      zmq_client = affinitic.zmq.zmq_client:main
       """,
 
       )
