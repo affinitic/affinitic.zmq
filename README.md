@@ -1,4 +1,4 @@
 affinitic.zmq
 =============
 
-Sending message trought zmq
+Sending messages trought zmq
