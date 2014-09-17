@@ -10,5 +10,10 @@ def main():
     while True:
         message = socket.recv()
         print("Received request: %s" % message)
-        Popen(message.split('|'))
-        socket.send("Command executed")
+        command = message.split('|')
+        try:
+            Popen(command)
+            socket.send("Command executed\n")
+        except:
+            print 'Error while executing the command'
+            socket.send("Error while executing the command")
