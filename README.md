@@ -23,14 +23,6 @@ Install zmq
 Zmq python library will need python-dev
     sudo apt-get install python-dev
 
-Add this line to your .bashrc / .zshrc this will allow virtuaenv to use dist-packages
-
-    export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
-    
-Add this line to your .bashrc / .zshrc this allow python script to access configuration file. See the sms.cfg_example for the syntax
-
-    export SMS_CONFIG_PATH=/home/<user>/buildout/affinitic.smsutils/sms.cfg
-
 /!\ Make sure the zmq\_server is working before launching the zmq_client
 
 Using the zmq_server:
@@ -41,5 +33,6 @@ Using the zmq_client:
   
     bin/zmq_client '<command>'
     
+
 
 
