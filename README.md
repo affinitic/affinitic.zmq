@@ -24,7 +24,6 @@ Zmq python library will need python-dev
 
     sudo apt-get install python-dev
 
-/!\ Make sure the zmq\_server is working before launching the zmq_client
 
 Using the zmq_server:
     
