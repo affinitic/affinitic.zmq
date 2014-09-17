@@ -41,6 +41,6 @@ Using the zmq_client:
   
     bin/zmq_client '<command>'
     
-    ie:/home/<user>/buildout/affinitic.ircutils/bin/send\_irc_message|-s|hyperflix.net|-n|alibabot|-c|#ircNoob|-m| hello world|-p|6667
+ie:/home/<user>/buildout/affinitic.ircutils/bin/send\_irc_message|-s|hyperflix.net|-n|alibabot|-c|#ircNoob|-m| hello world|-p|6667
 
 
