@@ -31,7 +31,7 @@ Using the zmq_server:
 
 Using the zmq_client:
   
-    bin/zmq_client '<command>'
+    bin/zmq_client '<command>' 'tcp://<ip>:<port>'
     
 
 
