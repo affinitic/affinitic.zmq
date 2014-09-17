@@ -21,6 +21,7 @@ Install zmq
     rm -rf zeromq-4.0.4.tar.gz zeromq-4.0.4/
 
 Zmq python library will need python-dev
+
     sudo apt-get install python-dev
 
 /!\ Make sure the zmq\_server is working before launching the zmq_client
