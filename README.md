@@ -2,6 +2,7 @@ affinitic.zmq
 =============
 
 Install zmq
+
     sudo apt-get install libzmq3-dev
 
 ... or
@@ -25,13 +26,21 @@ Zmq python library will need python-dev
     sudo apt-get install python-dev
 
 
-Using the zmq_server:
+Using the zmq_server
+--------------------
     
     bin/zmq_server
 
-Using the zmq_client:
+Using the zmq_client
+--------------------
   
-    bin/zmq_client '<command>'
+    bin/zmq_client '<command>' 'tcp://<ip>:<port>'
+    
+/!\ You have to split the parameters in \<command\> with |, not spaces !
+    
+Example
+
+    bin/zmq_client 'echo|hello|world' 'tcp://192.168.0.1:5555'
     
 
 
