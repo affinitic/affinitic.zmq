@@ -29,7 +29,7 @@ Zmq python library will need python-dev
 Using the zmq_server
 --------------------
     
-    bin/zmq_server
+    bin/zmq_server 'tcp://0.0.0.0:5555'
 
 Using the zmq_client
 --------------------
