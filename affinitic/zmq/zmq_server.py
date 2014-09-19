@@ -5,7 +5,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('ip', type=str)
+    parser.add_argument('-c', '--connectionstring', type=str, required=True)
     return parser.parse_args()
 
 
@@ -13,7 +13,7 @@ def main():
     args = get_args()
     context = zmq.Context()
     socket = context.socket(zmq.REP)
-    socket.bind(args.ip)
+    socket.bind(args.connectionstring)
 
     while True:
         message = socket.recv()

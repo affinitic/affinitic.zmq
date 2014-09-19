@@ -5,8 +5,8 @@ import time
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('message')
-    parser.add_argument('ip', type=str)
+    parser.add_argument('-m', '--message', type=str, required=True)
+    parser.add_argument('-c', '--connectionstring', type=str, required=True)
     return parser.parse_args()
 
 
@@ -14,9 +14,9 @@ def main():
     args = get_args()
     # Prepare our context and sockets
     context = zmq.Context()
-    
+
     socket = context.socket(zmq.REQ)
-    socket.connect(args.ip)
+    socket.connect(args.connectionstring)
     socket.send(args.message)
 
     for j in range(36000):
