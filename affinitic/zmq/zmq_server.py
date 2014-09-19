@@ -18,7 +18,7 @@ def main():
     while True:
         message = socket.recv()
         print("Received request: %s" % message)
-        command = message.split('|')
+        command = message.split('%')
         try:
             Popen(command)
             socket.send("Command executed\n")
