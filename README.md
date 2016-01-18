@@ -36,11 +36,11 @@ Using the zmq_client
   
     bin/zmq_client -m '<command>' -c 'tcp://<ip>:<port>'
     
-/!\ You have to split the parameters in \<command\> with |, not spaces !
+/!\ You have to split the parameters in \<command\> with %, not spaces !
     
 Example
 
-    bin/zmq_client -m 'echo|hello|world' -c 'tcp://192.168.0.1:5555'
+    bin/zmq_client -m 'echo%hello%world' -c 'tcp://192.168.0.1:5555'
     
 
 
