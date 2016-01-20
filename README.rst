@@ -1,58 +1,46 @@
-affinitic.smsutils
-==================
+affinitic.zmq
+=============
 
-Allow to send sms with 3G key
+Install zmq
 
+    sudo apt-get install libzmq3-dev
 
-Warning
--------
+... or
 
-This package use a python library (gammu) that will be installed in your dist-packages synaptic. You need your virtualenv python to know about that library. For this, edit your PYTHONPATH envar.
+    brew install zeromq
 
-    PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
+... or
 
+    wget http://download.zeromq.org/zeromq-4.0.4.tar.gz
+    tar -xvf zeromq-4.0.4.tar.gz
+    cd zeromq-4.0.4/
+    ./configure
+    make
+    sudo make install
+    sudo ldconfig
+    cd ..
+    rm -rf zeromq-4.0.4.tar.gz zeromq-4.0.4/
 
-The user that execute the script also need to be in the group 'dialout' to access the USB 3G key
+Zmq python library will need python-dev
 
-    sudo adduser $USER dialout
-
-This need the user to reconnect his session.
-
-
-Installation
-------------
-Do
-
-    git clone
-    make install
-You have to disconnect current user because we added it to some groups
+    sudo apt-get install python-dev
 
 
-Uninstall
----------
+Using the zmq_server
+--------------------
 
-    make uninstall
+    bin/zmq_server -c 'tcp://0.0.0.0:5555'
 
+Using the zmq_client
+--------------------
 
-Other configuration
--------------------
+    bin/zmq_client -m '<command>' -c 'tcp://<ip>:<port>'
 
-Gammu smsd daemon use a gammurc file specified when launching the daemon. You can see the gammurc_example file for an example of configuration.
+/!\ You have to split the parameters in \<command\> with %, not spaces !
 
-If you want to set smsd daemon to launch at startup, see the service_example file.
+Example
 
-
-Usage
------
-
-Launch daemon
-
-    gammu-smsd -c '/home/<user>/.gammurc'
-
-Send sms:
-
-    bin/send_sms
-
+    bin/zmq_client -m 'echo%hello%world' -c 'tcp://192.168.0.1:5555'
 
 Credits
 -------
@@ -63,5 +51,5 @@ This package was developed by `Affinitic team <https://github.com/affinitic>`_.
    :alt: Affinitic website
    :target: http://www.affinitic.be
 
-``affinitic.smsutils`` is licensed under GNU General Public License, version 2.
+``affinitic.zmq`` is licensed under GNU General Public License, version 2.
 
